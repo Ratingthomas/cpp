@@ -5,9 +5,10 @@
 bool is_empty_line(std::string line){
     if(line.empty()){
         return true;
-    } else{
-        return false;
+    } else if (line.find_first_not_of(" \t") == std::string::npos) {
+        return true;
     }
+    else return false;
 }
 
 std::string clean_line(std::string line){
