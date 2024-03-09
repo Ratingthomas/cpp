@@ -1,0 +1,12 @@
+# ninja log v5
+2	350	1708943350943859574	CMakeFiles/Opdracht_1.dir/Dictionary.cpp.o	5eb5a2e2781f5be7
+636	804	1709106353868487704	Opdracht_1	eafebd7aaa6df9f4
+2	636	1709106353698479827	CMakeFiles/Opdracht_1.dir/main.cpp.o	29c131f2ce3a9bde
+0	48	1709638959564175521	build.ninja	675d667a2e8d736d
+2	325	1709639103130426004	CMakeFiles/Opdracht_1.dir/Dictionary.cpp.o	a528122a13bbd11a
+2	331	1709639103136826294	CMakeFiles/Opdracht_1.dir/main.cpp.o	30a645bcfe412a7d
+331	365	1709639103172723306	Opdracht_1	eafebd7aaa6df9f4
+2	363	1709644627243885097	CMakeFiles/Opdracht_1.dir/Dictionary.cpp.o	a528122a13bbd11a
+363	401	1709644627283891828	Opdracht_1	eafebd7aaa6df9f4
+3	357	1709644637798878902	CMakeFiles/Opdracht_1.dir/main.cpp.o	30a645bcfe412a7d
+357	396	1709644637840703173	Opdracht_1	eafebd7aaa6df9f4

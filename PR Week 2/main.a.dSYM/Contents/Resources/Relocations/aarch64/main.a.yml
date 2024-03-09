@@ -1,0 +1,19 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     main.a
+relocations:
+  - { offsetInCU: 0x30E1, offset: 0x30E1, size: 0x8, addend: 0x0, symName: __ZNSt3__124__put_character_sequenceB7v160006IcNS_11char_traitsIcEEEERNS_13basic_ostreamIT_T0_EES7_PKS4_m, symObjAddr: 0x5E8, symBinAddr: 0x1000036C4, symSize: 0x164 }
+  - { offsetInCU: 0x5612, offset: 0x5612, size: 0x8, addend: 0x0, symName: __ZNSt3__1rsB7v160006IcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_istreamIT_T0_EES9_RNS_12basic_stringIS6_S7_T1_EE, symObjAddr: 0x320, symBinAddr: 0x1000033FC, symSize: 0x234 }
+  - { offsetInCU: 0x62F6, offset: 0x62F6, size: 0x8, addend: 0x0, symName: __ZNSt3__120__throw_length_errorB7v160006EPKc, symObjAddr: 0x574, symBinAddr: 0x100003650, symSize: 0x50 }
+  - { offsetInCU: 0x6333, offset: 0x6333, size: 0x8, addend: 0x0, symName: __ZNSt3__116__pad_and_outputB7v160006IcNS_11char_traitsIcEEEENS_19ostreambuf_iteratorIT_T0_EES6_PKS4_S8_S8_RNS_8ios_baseES4_, symObjAddr: 0x74C, symBinAddr: 0x100003828, symSize: 0x19C }
+  - { offsetInCU: 0x9987, offset: 0x9987, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000030DC, symSize: 0x320 }
+  - { offsetInCU: 0xAD5B, offset: 0xAD5B, size: 0x8, addend: 0x0, symName: __ZNKSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE20__throw_length_errorB7v160006Ev, symObjAddr: 0x560, symBinAddr: 0x10000363C, symSize: 0x14 }
+  - { offsetInCU: 0xAD85, offset: 0xAD85, size: 0x8, addend: 0x0, symName: __ZNSt3__120__throw_length_errorB7v160006EPKc, symObjAddr: 0x574, symBinAddr: 0x100003650, symSize: 0x50 }
+  - { offsetInCU: 0xB028, offset: 0xB028, size: 0x8, addend: 0x0, symName: __ZNSt12length_errorC1B7v160006EPKc, symObjAddr: 0x5C4, symBinAddr: 0x1000036A0, symSize: 0x24 }
+  - { offsetInCU: 0x26, offset: 0xB304, size: 0x8, addend: 0x0, symName: __ZN14money_database13MoneyDatabase3addE7Deposit, symObjAddr: 0x0, symBinAddr: 0x1000039C4, symSize: 0x4C }
+  - { offsetInCU: 0x533B, offset: 0x10619, size: 0x8, addend: 0x0, symName: __ZN14money_database13MoneyDatabase3addE7Deposit, symObjAddr: 0x0, symBinAddr: 0x1000039C4, symSize: 0x4C }
+  - { offsetInCU: 0x53B9, offset: 0x10697, size: 0x8, addend: 0x0, symName: __ZNK14money_database13MoneyDatabase4sizeEv, symObjAddr: 0x4C, symBinAddr: 0x100003A10, symSize: 0x8 }
+  - { offsetInCU: 0x56F8, offset: 0x109D6, size: 0x8, addend: 0x0, symName: __ZNK14money_database13MoneyDatabase3getEi, symObjAddr: 0x54, symBinAddr: 0x100003A18, symSize: 0xDC }
+  - { offsetInCU: 0x5C96, offset: 0x10F74, size: 0x8, addend: 0x0, symName: __ZN14money_database13MoneyDatabase8total_ofENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, symObjAddr: 0x130, symBinAddr: 0x100003AF4, symSize: 0x10C }
+  - { offsetInCU: 0x5D35, offset: 0x11013, size: 0x8, addend: 0x0, symName: __ZN14money_database13MoneyDatabase8total_ofENSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, symObjAddr: 0x130, symBinAddr: 0x100003AF4, symSize: 0x10C }
+...
