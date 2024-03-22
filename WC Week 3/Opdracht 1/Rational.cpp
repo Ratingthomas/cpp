@@ -6,11 +6,15 @@
 #include <iostream>
 #include <stdlib.h>
 #include <cmath>
+#include <sstream>
+#include <algorithm>
 
 namespace Rational{
-    Rational::Rational() {
-        num_ = 0;
-        den_ = 1;
+    Rational::Rational():
+        num_{0},
+        den_{1}
+    {
+
     }
 
     Rational::Rational(int num, int den){
@@ -23,23 +27,27 @@ namespace Rational{
     }
 
     Rational::Rational(std::string str){
-        std::string tmp;
+        std::string tmp_num;
+        std::string tmp_den;
+        char action;
         bool first = true;
 
-        for (int i = 0; i < str.size(); ++i) {
-            if(isalpha(str[i])){
-                if(str[i] == '/'){
-                    first = false;
-                }
-
+        for (int i = 0; i < str.length(); ++i) {
+            if(str[i] == '/'){
+                first = false;
+            } else{
                 if(first){
-                    num_ += str[i];
+                    tmp_num += str[i];
                 } else{
-                    den_ += str[i];
+                    tmp_den += str[i];
                 }
             }
         }
 
+        int num = std::stoi(tmp_num);
+        int den = std::stoi(tmp_den);
+
+        Rational::set(num, den);
     }
 
     int Rational::num() const{
@@ -71,9 +79,10 @@ namespace Rational{
     }
 
     bool Rational::is_inf() const{
-        if(isinf(num_) || isinf(den_)){
+        if(den_ <= 0){
             return true;
-        } else{
+        }
+        else{
             return false;
         }
     }
@@ -87,35 +96,42 @@ namespace Rational{
     }
 
     void Rational::set(int num, int den){
-        if(num != 0 && den != 0){
-            int gcd = Rational::gcd(num, den);
+        int gcd = Rational::gcd(num, den);
 
-            num_ = num / gcd;
-            den_ = den / gcd;
-        } else{
-            num_ = NAN;
-            den_ = NAN;
+        num_ = num / gcd;
+        den_ = den / gcd;
+
+        if(num_ < 0 && den_ < 0){
+            num_ = num_ * -1;
+            den_ = den_ * -1;
         }
-
     }
 
-    int Rational::gcd(int num, int den) {
-        int result = std::min(num, den);
-        while (result > 0) {
-            if (num % result == 0 && den % result == 0) {
-                break;
-            }
-            result--;
+    int Rational::gcd(int n, int d) {
+        int a, b, c;
+        a = n;
+        b = d;
+
+        while (a % b != 0) {
+            c = a % b;
+            a = b;
+            b = c;
         }
 
-        return result;
+        return b;
     }
 
     Rational Rational::add(Rational b) const {
-        int a_num = num() * b.den_;
-        int b_num = b.num_ * den();
+        if(is_inf()){
+            return (Rational){1, 0};
+        } else{
+            int a_num = num() * b.den_;
+            int b_num = b.num_ * den();
 
-        return (Rational){(a_num + b_num), (b.den() * den())};
+            return {(a_num + b_num), (b.den() * den())};
+        }
+
+
     }
 
     Rational Rational::sub(Rational b) const {
@@ -129,13 +145,37 @@ namespace Rational{
         return (Rational){(num() * b.den()), (den() * b.num())};
     }
 
+    Rational Rational::mul(Rational b) const {
+        return (Rational){num() * b.num_, den() * b.den_};
+    }
+
     Rational Rational::pow(int n) const {
-        return (Rational){num() * num(), den() * den()};
+        double num_n = num();
+        double den_n = den();
+        double pow = n;
+
+        return (Rational){(int) std::pow(num_n, pow), (int) std::pow(den_n, pow)};
     }
 
     Rational Rational::sqrt() const {
-        if(!is_nan()){
-            
+        double num_n = std::sqrt(num());
+        double den_n = std::sqrt(den());
+
+        double intpart;
+        double fractpart = modf (num_n , &intpart);
+
+        if(fractpart != 0){
+            num_n = 0;
+            den_n = 0;
+        }
+
+        if(!is_nan() && !is_neg() && !is_inf()){
+            return (Rational){(int)num_n, (int)den_n};
+        } else{
+            num_n = 0;
+            den_n = 0;
+
+            return (Rational){(int)num_n, (int)den_n};
         }
     }
 }

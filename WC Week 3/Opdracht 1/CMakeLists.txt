@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Opdracht_1 main.cpp
         Rational.cpp
-        Rational.h)
+        Rational.h
+        rational_calc.h
+        rational_calc.cpp)

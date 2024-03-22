@@ -42,7 +42,7 @@ namespace Rational{
             int num_;
             int den_;
 
-            int gcd(int num, int den);
+            int gcd(int n, int d);
         };
 }
 

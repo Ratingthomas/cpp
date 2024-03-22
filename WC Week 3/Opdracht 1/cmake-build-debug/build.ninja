@@ -51,13 +51,19 @@ build cmake_object_order_depends_target_Opdracht_1: phony || CMakeFiles/Opdracht
 
 build CMakeFiles/Opdracht_1.dir/main.cpp.o: CXX_COMPILER__Opdracht_1_unscanned_Debug /Users/thomaslevels/Documents/Development/cpp/WC$ Week$ 3/Opdracht$ 1/main.cpp || cmake_object_order_depends_target_Opdracht_1
   DEP_FILE = CMakeFiles/Opdracht_1.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Opdracht_1.dir
   OBJECT_FILE_DIR = CMakeFiles/Opdracht_1.dir
 
 build CMakeFiles/Opdracht_1.dir/Rational.cpp.o: CXX_COMPILER__Opdracht_1_unscanned_Debug /Users/thomaslevels/Documents/Development/cpp/WC$ Week$ 3/Opdracht$ 1/Rational.cpp || cmake_object_order_depends_target_Opdracht_1
   DEP_FILE = CMakeFiles/Opdracht_1.dir/Rational.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/Opdracht_1.dir
+  OBJECT_FILE_DIR = CMakeFiles/Opdracht_1.dir
+
+build CMakeFiles/Opdracht_1.dir/rational_calc.cpp.o: CXX_COMPILER__Opdracht_1_unscanned_Debug /Users/thomaslevels/Documents/Development/cpp/WC$ Week$ 3/Opdracht$ 1/rational_calc.cpp || cmake_object_order_depends_target_Opdracht_1
+  DEP_FILE = CMakeFiles/Opdracht_1.dir/rational_calc.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Opdracht_1.dir
   OBJECT_FILE_DIR = CMakeFiles/Opdracht_1.dir
 
@@ -69,8 +75,8 @@ build CMakeFiles/Opdracht_1.dir/Rational.cpp.o: CXX_COMPILER__Opdracht_1_unscann
 #############################################
 # Link the executable Opdracht_1
 
-build Opdracht_1: CXX_EXECUTABLE_LINKER__Opdracht_1_Debug CMakeFiles/Opdracht_1.dir/main.cpp.o CMakeFiles/Opdracht_1.dir/Rational.cpp.o
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk
+build Opdracht_1: CXX_EXECUTABLE_LINKER__Opdracht_1_Debug CMakeFiles/Opdracht_1.dir/main.cpp.o CMakeFiles/Opdracht_1.dir/Rational.cpp.o CMakeFiles/Opdracht_1.dir/rational_calc.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
   OBJECT_DIR = CMakeFiles/Opdracht_1.dir
   POST_BUILD = :
   PRE_LINK = :

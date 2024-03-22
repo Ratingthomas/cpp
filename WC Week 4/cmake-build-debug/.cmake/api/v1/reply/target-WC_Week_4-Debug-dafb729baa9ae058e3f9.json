@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Opdracht_1"
+			"path" : "WC_Week_4"
 		}
 	],
 	"backtrace" : 1,
@@ -35,7 +35,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics"
+					"fragment" : "-g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics"
 				}
 			],
 			"language" : "CXX",
@@ -54,7 +54,7 @@
 			]
 		}
 	],
-	"id" : "Opdracht_1::@6890427a1f51a3e7e1df",
+	"id" : "WC_Week_4::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -70,8 +70,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "Opdracht_1",
-	"nameOnDisk" : "Opdracht_1",
+	"name" : "WC_Week_4",
+	"nameOnDisk" : "WC_Week_4",
 	"paths" : 
 	{
 		"build" : ".",
@@ -106,12 +106,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Rational.cpp",
+			"path" : "Options.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Rational.h",
+			"path" : "Options.h",
 			"sourceGroupIndex" : 1
 		}
 	],
