@@ -5,4 +5,8 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(WC_Week_4 main.cpp
         Options.cpp
-        Options.h)
+        Options.h
+        FileCounts.h
+        Counter.cpp
+        Counter.h
+)

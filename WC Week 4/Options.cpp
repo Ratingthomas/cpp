@@ -12,7 +12,8 @@ namespace Options {
         bytes_{false},
         longest_line_{false},
         help_{false},
-        version_{false}
+        version_{false},
+        verbose_{false}
     {}
 
     Options::Options(int argc, char * argv[]):
@@ -22,45 +23,55 @@ namespace Options {
         bytes_{false},
         longest_line_{false},
         help_{false},
-        version_{false}
+        version_{false},
+        verbose_{false}
     {
         parse(argc, argv);
     }
+
+//    void Options::print(std::ostream &out) const {
+//        out << "";
+//    }
 
     void Options::parse(int argc, char **argv) {
         for (int i = 1; i < argc; ++i) {
             std::string arg{ argv[i] };
 
             if(arg.starts_with("-")){
-                for (size_t j = 0; j < arg.length(); ++j) {
-                    if(arg[j] == 'c'){
-                        bytes_ = true;
-                    } else if(arg[j] == 'm') {
-                        characters_ = true;
-                    } else if(arg[j] == 'w'){
-                        words_ = true;
-                    } else if(arg[j] == 'l'){
-                        lines_ = true;
-                    } else if(arg[j] == 'L'){
-                        longest_line_ = true;
+                if(strcmp(argv[i], "--help") == 0){
+                    help_ = true;
+                }
+                else if(strcmp(argv[i], "--version") == 0){
+                    version_ = true;
+                }
+                else if(strcmp(argv[i], "--verbose") == 0){
+                    verbose_ = true;
+                } else{
+                    for (size_t j = 0; j < arg.length(); ++j) {
+                        if(arg[j] == 'c'){
+                            bytes_ = true;
+                        } else if(arg[j] == 'm') {
+                            characters_ = true;
+                        } else if(arg[j] == 'w'){
+                            words_ = true;
+                        } else if(arg[j] == 'l'){
+                            lines_ = true;
+                        } else if(arg[j] == 'L'){
+                            longest_line_ = true;
+                        }
                     }
                 }
-            }
 
-            if(strcmp(argv[i], "--help") == 0){
-                help_ = true;
-            }
-            else if(strcmp(argv[i], "--version") == 0){
-                version_ = true;
+
             } else{
-
+                file_name_.push_back(argv[i]);
             }
         }
     }
 
-//    const std::vector<std::string>& Options::file_names() const {
-//
-//    }
+    const std::vector<std::string>& Options::file_names() const {
+        return file_name_;
+    }
 
     bool Options::bytes() const {
         return bytes_;
@@ -91,14 +102,7 @@ namespace Options {
     }
 
     bool Options::verbose() const {
-        std::cout << "lines_ = " << lines_ << "\n";
-        std::cout << "words_ = " << words_ << "\n";
-        std::cout << "characters_ = " << characters_ << "\n";
-        std::cout << "bytes_ = " << bytes_ << "\n";
-        std::cout << "longest_line_ = " << longest_line_ << "\n";
-        std::cout << "help_ = " << help_ << "\n";
-        std::cout << "version_ = " << version_ << "\n";
-        return true;
+        return verbose_;
     }
 
 } // Options

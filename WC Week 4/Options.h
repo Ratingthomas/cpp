@@ -45,9 +45,9 @@ namespace Options {
         bool longest_line_;
         bool help_;
         bool version_;
+        bool verbose_;
 
-//        int argc_;
-//        char ** argv_[];
+        std::vector<std::string> file_name_;
     };
 
     // you may use this function to print directly to a stream

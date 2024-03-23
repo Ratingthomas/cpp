@@ -61,6 +61,12 @@ build CMakeFiles/WC_Week_4.dir/Options.cpp.o: CXX_COMPILER__WC_Week_4_unscanned_
   OBJECT_DIR = CMakeFiles/WC_Week_4.dir
   OBJECT_FILE_DIR = CMakeFiles/WC_Week_4.dir
 
+build CMakeFiles/WC_Week_4.dir/Counter.cpp.o: CXX_COMPILER__WC_Week_4_unscanned_Debug /Users/thomaslevels/Documents/Development/cpp/WC$ Week$ 4/Counter.cpp || cmake_object_order_depends_target_WC_Week_4
+  DEP_FILE = CMakeFiles/WC_Week_4.dir/Counter.cpp.o.d
+  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/WC_Week_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/WC_Week_4.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target WC_Week_4
@@ -69,7 +75,7 @@ build CMakeFiles/WC_Week_4.dir/Options.cpp.o: CXX_COMPILER__WC_Week_4_unscanned_
 #############################################
 # Link the executable WC_Week_4
 
-build WC_Week_4: CXX_EXECUTABLE_LINKER__WC_Week_4_Debug CMakeFiles/WC_Week_4.dir/main.cpp.o CMakeFiles/WC_Week_4.dir/Options.cpp.o
+build WC_Week_4: CXX_EXECUTABLE_LINKER__WC_Week_4_Debug CMakeFiles/WC_Week_4.dir/main.cpp.o CMakeFiles/WC_Week_4.dir/Options.cpp.o CMakeFiles/WC_Week_4.dir/Counter.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
   OBJECT_DIR = CMakeFiles/WC_Week_4.dir
   POST_BUILD = :

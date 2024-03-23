@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/thomaslevels/Documents/Development/C++/cpp/PR Week 1/cmake-build-debug"
+			"value" : "/Users/thomaslevels/Documents/Development/cpp/PR Week 1/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -479,7 +479,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/thomaslevels/Documents/Development/C++/cpp/PR Week 1/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/Users/thomaslevels/Documents/Development/cpp/PR Week 1/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -539,7 +539,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/thomaslevels/Documents/Development/C++/cpp/PR Week 1"
+			"value" : "/Users/thomaslevels/Documents/Development/cpp/PR Week 1"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -771,7 +771,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -1127,7 +1127,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/thomaslevels/Documents/Development/C++/cpp/PR Week 1/cmake-build-debug"
+			"value" : "/Users/thomaslevels/Documents/Development/cpp/PR Week 1/cmake-build-debug"
 		},
 		{
 			"name" : "PR_Week_1_IS_TOP_LEVEL",
@@ -1151,7 +1151,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/thomaslevels/Documents/Development/C++/cpp/PR Week 1"
+			"value" : "/Users/thomaslevels/Documents/Development/cpp/PR Week 1"
 		}
 	],
 	"kind" : "cache",
