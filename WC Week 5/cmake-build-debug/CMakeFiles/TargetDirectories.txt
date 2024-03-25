@@ -1,0 +1,3 @@
+/Users/thomaslevels/Documents/Development/cpp/WC Week 5/cmake-build-debug/CMakeFiles/WC_Week_5.dir
+/Users/thomaslevels/Documents/Development/cpp/WC Week 5/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/thomaslevels/Documents/Development/cpp/WC Week 5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
