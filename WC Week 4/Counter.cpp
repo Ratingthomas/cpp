@@ -3,11 +3,46 @@
 //
 
 #include "Counter.h"
+//#include "FileCounts.h"
+#include <sstream>
+#include <fstream>
+#include <algorithm>
 
 namespace Counter {
     Counter::Counter(const Options::Options &opts):
         opts_{opts}
-        {};
+    {}
 
+    FileCounts Counter::process(const std::string &file_name) {
+        std::ifstream input{file_name};
+        FileCounts fileCount = {};
+        fileCount.file_name = file_name;
+        fileCount.maximum_line_length = 0;
 
+        if(input.fail()){
+            throw std::invalid_argument("Could not open file: " + file_name);
+        }
+
+        std::string line;
+
+        while (std::getline(input, line)){
+            fileCount.lines++;
+
+            std::istringstream iss{ line };
+            std::string word;
+
+            if(line.length() > fileCount.maximum_line_length){
+                fileCount.maximum_line_length = line.length();
+            }
+
+            while (iss >> word){
+                fileCount.words++;
+
+                fileCount.characters += word.size();
+                fileCount.bytes += sizeof(word);
+            }
+        }
+
+        return fileCount;
+    }
 } // Counter

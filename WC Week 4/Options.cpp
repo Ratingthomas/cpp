@@ -36,32 +36,44 @@ namespace Options {
     void Options::parse(int argc, char **argv) {
         for (int i = 1; i < argc; ++i) {
             std::string arg{ argv[i] };
+            bool found = false;
 
             if(arg.starts_with("-")){
                 if(strcmp(argv[i], "--help") == 0){
                     help_ = true;
+                    found = true;
                 }
                 else if(strcmp(argv[i], "--version") == 0){
                     version_ = true;
+                    found = true;
                 }
                 else if(strcmp(argv[i], "--verbose") == 0){
                     verbose_ = true;
+                    found = true;
                 } else{
                     for (size_t j = 0; j < arg.length(); ++j) {
                         if(arg[j] == 'c'){
                             bytes_ = true;
+                            found = true;
                         } else if(arg[j] == 'm') {
                             characters_ = true;
+                            found = true;
                         } else if(arg[j] == 'w'){
                             words_ = true;
+                            found = true;
                         } else if(arg[j] == 'l'){
                             lines_ = true;
+                            found = true;
                         } else if(arg[j] == 'L'){
                             longest_line_ = true;
+                            found = true;
                         }
                     }
                 }
 
+                if(!found){
+                    throw std::invalid_argument("Invalid argument passed: " + arg);
+                }
 
             } else{
                 file_name_.push_back(argv[i]);

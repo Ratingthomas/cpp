@@ -16,7 +16,33 @@ struct FileCounts
     std::size_t maximum_line_length{};
     std::string file_name{};
 
-    void print(std::ostream& out, Options::Options const& opt) const;
+    void print(Options::Options const& opt){
+        std::string output;
+
+        if (opt.lines()) {
+            output += std::to_string(this->lines) + " ";
+        }
+        if (opt.words()) {
+            output += std::to_string(this->words) + " ";
+        }
+        if (opt.characters()) {
+            output += std::to_string(this->characters) + " ";
+        }
+        if (opt.bytes()) {
+            output += std::to_string(this->bytes) + " ";
+        }
+        if (opt.longest_line()) {
+            output += std::to_string(this->maximum_line_length) + " ";
+        }
+
+        output += this->file_name + " ";
+
+        std::cout << output << "\n";
+    };
 };
+
+
+
+
 
 #endif //WC_WEEK_4_FILECOUNTS_H
