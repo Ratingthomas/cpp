@@ -17,14 +17,7 @@ namespace Options {
     {}
 
     Options::Options(int argc, char * argv[]):
-        lines_{false},
-        words_{false},
-        characters_{false},
-        bytes_{false},
-        longest_line_{false},
-        help_{false},
-        version_{false},
-        verbose_{false}
+        Options()
     {
         parse(argc, argv);
     }

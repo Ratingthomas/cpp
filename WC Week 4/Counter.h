@@ -14,6 +14,9 @@ namespace Counter {
             Counter(const Options::Options& opts);
             FileCounts process(const std::string& file_name);
 
+            FileCounts process_line(std::string line, FileCounts fileCount);
+            size_t maximum_line_length(std::string line, FileCounts fileCount);
+
         private:
             const Options::Options& opts_;
     };

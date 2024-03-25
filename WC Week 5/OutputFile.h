@@ -25,6 +25,8 @@ namespace OutputFile {
         // closes the file
         void close();
 
+        std::string file_name();
+
         // writes the given value to the file if it is open
         // all those functions use std::fprintf or std::fputs
 
@@ -38,7 +40,8 @@ namespace OutputFile {
         OutputFile& operator<<(bool value);
 
     private:
-        std::string file_name_;
+        const std::string& file_name_;
+        FILE* out_;
     };
 
 } // OutputFile
