@@ -3,9 +3,11 @@
 #include <cstdio>
 
 int main() {
-    OutputFile::OutputFile fw{"test.txt"};
+    io::OutputFile fw{"output.txt"};
 
-//    fw << "a" << "a";
     fw << "Alice has " << 3 << " rats.\n";
+    fw << "True of false: does Alice like rats?\n"
+       << "Answer: " << true << "\n";
+
     return 0;
 }

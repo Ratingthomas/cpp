@@ -26,13 +26,13 @@ namespace Counter {
         std::string line;
 
         while (std::getline(input, line)){
-            fileCount = Counter::process_line(line, fileCount);
+            Counter::process_line(line, fileCount);
         }
 
         return fileCount;
     }
 
-    size_t Counter::maximum_line_length(std::string line, FileCounts fileCount){
+    size_t Counter::maximum_line_length(const std::string &line, FileCounts &fileCount){
         if(line.length() > fileCount.maximum_line_length){
             return line.length();
         } else{
@@ -40,7 +40,7 @@ namespace Counter {
         }
     }
 
-    FileCounts Counter::process_line(std::string line, FileCounts fileCount) {
+    void Counter::process_line(const std::string &line, FileCounts &fileCount) {
         fileCount.lines++;
 
         std::istringstream iss{ line };
@@ -55,6 +55,6 @@ namespace Counter {
             fileCount.bytes += sizeof(word);
         }
 
-        return fileCount;
+//        return fileCount;
     }
 } // Counter

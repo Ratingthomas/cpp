@@ -6,7 +6,7 @@
 #define WC_WEEK_5_OUTPUTFILE_H
 #include <iostream>
 
-namespace OutputFile {
+namespace io {
 
     class OutputFile {
     public:
@@ -18,12 +18,20 @@ namespace OutputFile {
         OutputFile();
 
         // destructor
-        ~OutputFile();
+        ~OutputFile(){
+            if(is_open()){
+                std::fclose(out_);
+            }
+        }
 
         // opens the file with the given name, closes the previous file if it was open
         void open(const std::string& file_name);
         // closes the file
         void close();
+
+        bool is_open();
+        bool eof();
+        bool error();
 
         std::string file_name();
 
