@@ -19,10 +19,10 @@ namespace numeric
         void swap(Numbers& other);
 
         // TODO 2: Implement the copy constructor:
-        Numbers(Numbers& other);
+        Numbers(Numbers const &other);
 
         // TODO 3: Implement the copy assignment operator
-        // ...
+        Numbers& operator=(const Numbers& other);
 
         // TODO 4: Implement a clone function that makes a full copy of the object (yes it works like the copy constructor)
         Numbers clone() const;
@@ -52,7 +52,8 @@ namespace numeric
         double& operator[](std::size_t index);
 
         friend std::ostream& operator<<(std::ostream& os, const Numbers& numbers);
-//        friend std::ostream& operator==(std::ostream& os, const Numbers& numbers);
+
+        friend std::ostream& operator==(std::ostream& os, const Numbers& numbers);
 
     private:
 
@@ -62,7 +63,8 @@ namespace numeric
     };
 
     std::ostream& operator<<(std::ostream& os, const Numbers& numbers);
-//    std::ostream& operator==(std::ostream& os, const Numbers& numbers);
+
+    std::ostream& operator==(std::ostream& os, const Numbers& numbers);
 }
 
 

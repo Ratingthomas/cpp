@@ -9,17 +9,20 @@ namespace numeric
     static constexpr std::size_t INITIAL_CAPACITY = 16;
 
     Numbers::Numbers() : 
-        array_(new double[INITIAL_CAPACITY]{}), 
+        array_(new double[INITIAL_CAPACITY]{}),
         size_(0), 
         capacity_(INITIAL_CAPACITY)
     {
+
     }
 
-    Numbers::Numbers(numeric::Numbers &other) :
-        array_(other.array_),
-        size_(other.size_),
-        capacity_(other.capacity_)
-    {}
+    Numbers::Numbers(Numbers const &other) :
+        array_{new double[other.capacity_]},
+        size_{other.size_},
+        capacity_{other.capacity_}
+    {
+        std::copy(&other.array_[0], &other.array_[other.size_], &array_[0]);
+    }
 
     Numbers::~Numbers()
     {
@@ -153,10 +156,24 @@ namespace numeric
         return tmp;
     }
 
-    std::ostream& operator==(std::ostream& os, const Numbers& numbers){
-
+    Numbers& Numbers::operator=(const Numbers& other){
+        if(this != &other){
+            Numbers copy{other}; // use copy constructor to create a copy
+            swap(copy);
+/*
+            auto array = new double[other.capacity_];
+            std::copy(&other.array_[0], &other.array_[other.size_], &array[0]);
+            // copy other members' values
+            capacity_ = other.capacity_;
+            size_ = other.size_;
+            // DELETE the old array
+            delete[] array_;
+            // re-assign
+            array_ = array;
+*/
+        }
+        return *this;
     }
-
 
     std::ostream& operator<<(std::ostream& os, const Numbers& numbers)
     {

@@ -7,7 +7,7 @@ int main()
     Numbers numbers1{};
     numbers1.push_back(3.14);
     numbers1.push_back(2.71);
-    numbers1.push_back(1.61);
+    numbers1.push_back(1.41);
 
     Numbers numbers2{numbers1}; // copy constructor
 
