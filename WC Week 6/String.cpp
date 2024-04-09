@@ -3,11 +3,17 @@
 //
 
 #include "String.h"
+#include <algorithm>
+#include <stdexcept>
+#include <iostream>
 
 namespace cppf {
     String::String():
         storage_{(char *)"\0"},
         length_{0}
+    {};
+
+    String::String(cppf::String const &t):
     {};
 
     String::String(const char * string):
@@ -40,7 +46,7 @@ namespace cppf {
         }
     }
 
-    const char String::at(std::size_t index) {
+    char String::at(std::size_t index) {
         if(index > length_-1){
             throw std::out_of_range("Index is out of bounce!");
         } else{
@@ -48,30 +54,59 @@ namespace cppf {
         }
     }
 
-    const char String::begin() {
+    char String::begin() {
         return storage_[0];
     };
 
-    const char String::end() {
+    char String::end() {
         return storage_[length_ -1];
     };
 
-    void String::append(const char* str){
-//        char* new_[80];
-//        strcpy(new_,storage_);
-//        strcat(new_, str);
-
-//        storage_ = (char *) new_;
+    void String::swap(cppf::String& other) {
+        std::swap(storage_, other.storage_);
+        std::swap(length_, other.length_);
     }
 
-//    void String::append(const cppf::String& str)
-//    {
-//        append(str.c_str());
-//    }
-//
-//    void String::append(const std::string& str)
-//    {
-//        append(str.c_str());
-//    }
+    cppf::String& String::operator=(const cppf::String& other){
+        if(this != &other){
+            String copy{other};
+
+            std::swap(storage_, copy.storage_);
+            std::swap(length_, copy.length_);
+        }
+        return *this;
+    }
+
+
+    void String::append(const char* str){
+        std::string new_ = storage_;
+        std::string concatenated = new_ + str;
+
+        char* result = new char[concatenated.length() + 1]; // +1 for null terminator
+        std::strcpy(result, concatenated.c_str());
+
+        storage_ = result;
+    }
+
+    void String::append(String str)
+    {
+        append(str.c_str());
+    }
+
+    void String::append(const std::string& str)
+    {
+        append(str.c_str());
+    }
+
+    void String::append(char c){
+//        const char * ne_ = (const char *) (c);
+
+//        append()
+    }
+
+    void String::clear() {
+        storage_ = (char *) "\0";
+        length_ = 0;
+    }
 
 } // cppf

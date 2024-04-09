@@ -18,11 +18,21 @@ int main() {
     std::cout << str.size() << std::endl;  // 5
     std::cout << str.empty() << std::endl;  // 0
     std::cout << str.c_str() << std::endl;  // Alice
+    std::cout << str.at(1) << std::endl;  // l
 
-    cppf::String str_a{"Alice"};
-    str_a.append(" and Bob");
+//    cppf::String str_a{"Alice"};
+    str.append(" and Bob");
 
-    std::cout << "New: " << str_a.c_str() << std::endl;
+    std::string are{" are"};
+    str.append(are);
+
+    std::string test = "friends";
+    str.append(test);
+    str.append('.');
+//
+    std::cout << "New: " << str.c_str() << std::endl;
+    str.clear();
+    std::cout << "clear: " << str.c_str() << std::endl;
 
     return 0;
 }
